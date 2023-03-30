@@ -1,7 +1,7 @@
 var session = require('express-session');
 var Keycloak = require('keycloak-connect');
 
-let _keycloak;
+let _keycloak: any;
 
 var keycloakConfig = {
     clientId: 'testclient',
