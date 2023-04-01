@@ -11,6 +11,6 @@
         "allowSyntheticDefaultImports": true
     },
     "files": [
-        "../src/app.ts"
+        "../src/app.js"
     ]
 }

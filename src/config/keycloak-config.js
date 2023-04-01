@@ -1,12 +1,12 @@
-var session = require('express-session');
-var Keycloak = require('keycloak-connect');
+import session from 'express-session';
+import Keycloak from 'keycloak-connect';
 
-let _keycloak: any;
+let _keycloak;
 
 var keycloakConfig = {
     clientId: 'testclient',
     bearerOnly: true,
-    serverUrl: 'http://localhost:8080/auth',
+    serverUrl: 'http://localhost:8089/auth',
     realm: 'test',
     credentials: {
         secret: 'qmBKfFvrcxnrXQIWBVVYrBt5jlILe48C'
@@ -14,6 +14,7 @@ var keycloakConfig = {
 };
 
 function initKeycloak() {
+    console.log("Initializing...");
     if (_keycloak) {
         console.warn("Trying to init Keycloak again!");
         return _keycloak;
@@ -28,12 +29,12 @@ function initKeycloak() {
 
 function getKeycloak() {
     if (!_keycloak){
-        console.error('Keycloak has not been initialized. Please called init first.');
+        console.log("Keycloak is not initialized. Initialized it before");
     } 
     return _keycloak;
 }
 
-module.exports = {
+export {
     initKeycloak,
     getKeycloak
 };
