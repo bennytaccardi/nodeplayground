@@ -9,5 +9,11 @@ services:
     volumes:
       - ./src:/app/src/
       - node_modules:/app/node_modules
+    networks:
+      - common-net
 volumes:
     node_modules:
+networks:
+  common-net:
+    external:
+      name: keycloaktest_net

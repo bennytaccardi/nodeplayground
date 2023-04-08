@@ -1,10 +1,10 @@
-FROM node:14-alpine
+FROM node:19-alpine
 
 WORKDIR /app
 
 ADD package.json .
 
-RUN npm i --silent
+RUN npm i
 
 ENTRYPOINT ["npm", "run"]
 
